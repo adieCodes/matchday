@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -13,7 +13,7 @@
   }
 }
 
-.App-header {
+.App-scoreboard {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -35,4 +35,43 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+body {
+  margin: 16px;
+  background-color: #282c34;
+}
+
+.app {
+  color: white;
+  font-size: 18px;
+}
+
+/* .scoreboard__match {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  font-size: calc(18px + 2vmin);
+} */
+
+.scoreboard {
+  width: 100%;
+  table-layout: auto;
+}
+
+.scoreboard__competition {
+  text-align: left;
+  font-size: 1.25em;
+  line-height: 2em;
+}
+
+.scoreboard__badge {
+  height: 1.75em;
+}
+
+td.scoreboard__score {
+  text-align: centre;
+  background-color: azure;
+  color: #282c34;
+  border-radius: 5px;
 }

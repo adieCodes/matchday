@@ -19,7 +19,7 @@ const Matchday = (props: Props) => {
         time={time}
         score={score}
       />
-      <Nav />
+      <Nav contestants={contestants} />
     </>
   );
 };

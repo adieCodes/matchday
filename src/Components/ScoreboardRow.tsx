@@ -5,10 +5,11 @@ interface Props {
   time: string;
   badge: string;
   venue: string;
+  score: number;
 }
 
 const ScoreboardRow = (props: Props) => {
-  const { team, time, badge, venue } = props;
+  const { team, time, badge, venue, score } = props;
 
   return (
     <tr className={`scoreboard__${venue}`} key={`${venue}-score`}>
@@ -26,7 +27,9 @@ const ScoreboardRow = (props: Props) => {
           {time}
         </td>
       )}
-      <td className={`scoreboard__score--${venue} scoreboard__score`}>7</td>
+      <td className={`scoreboard__score--${venue} scoreboard__score`}>
+        {score}
+      </td>
     </tr>
   );
 };

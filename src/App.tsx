@@ -8,6 +8,7 @@ function App() {
   const [contestants, setContestants] = useState([]);
   const [competition, setCompetition] = useState('');
   const [matchTime, setMatchTime] = useState('');
+  const [currentScore, setCurrentScore] = useState({ home: 0, away: 0 });
 
   useEffect(() => {
     fetch(
@@ -23,6 +24,8 @@ function App() {
         setContestants(res.match.contestant);
         setCompetition(res.match.meta.competition.name);
         setMatchTime(time);
+        // Assume the total score is always the latest
+        setCurrentScore(res.match.liveData.matchDetails.scores.total);
         setLoading(false);
       });
   }, []);
@@ -36,6 +39,7 @@ function App() {
           contestants={contestants}
           competition={competition}
           time={matchTime}
+          score={currentScore}
         />
       )}
     </div>

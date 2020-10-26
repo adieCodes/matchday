@@ -7,3 +7,8 @@ type Team = {
   code: string;
   position: string;
 };
+
+interface IScore {
+  home: number;
+  away: number;
+}

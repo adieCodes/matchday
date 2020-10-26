@@ -7,6 +7,7 @@ function App() {
   const [isLoading, setLoading] = useState(true);
   const [contestants, setContestants] = useState([]);
   const [competition, setCompetition] = useState('');
+  const [matchTime, setMatchTime] = useState('');
 
   useEffect(() => {
     fetch(
@@ -14,8 +15,14 @@ function App() {
     )
       .then((res) => res.json())
       .then((res) => {
+        // Assumed the logic here but would check other match statuses
+        const time =
+          res.match.liveData.matchDetails.matchStatus.toLowerCase() === 'played'
+            ? 'FT'
+            : res.match.liveData.matchDetails.matchLengthMin;
         setContestants(res.match.contestant);
         setCompetition(res.match.meta.competition.name);
+        setMatchTime(time);
         setLoading(false);
       });
   }, []);
@@ -25,7 +32,11 @@ function App() {
       {isLoading ? (
         <Loading />
       ) : (
-        <Scoreboard contestants={contestants} competition={competition} />
+        <Scoreboard
+          contestants={contestants}
+          competition={competition}
+          time={matchTime}
+        />
       )}
     </div>
   );

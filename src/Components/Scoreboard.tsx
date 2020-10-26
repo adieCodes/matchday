@@ -2,10 +2,11 @@ import React from 'react';
 
 interface Props {
   contestants: Team[];
+  competition: string;
 }
 
 const Scoreboard = (props: Props) => {
-  const { contestants } = props;
+  const { contestants, competition } = props;
   const teamBadges = [
     'https://s3.eu-west-1.amazonaws.com/live.content.fantasyiteam.com/bethub/teams/150x150/b496gs285it6bheuikox6z9mj.png',
     'https://s3.eu-west-1.amazonaws.com/live.content.fantasyiteam.com/bethub/teams/150x150/c8h9bw1l82s06h77xxrelzhur.png',
@@ -15,7 +16,7 @@ const Scoreboard = (props: Props) => {
 
   return (
     <table className='scoreboard'>
-      <caption className='scoreboard__competition'>Premier League</caption>
+      <caption className='scoreboard__competition'>{competition}</caption>
       <tbody className='scoreboard__scoreboard'>
         {contestants.map((contestant, i) => (
           <tr className={`scoreboard__${venue[i]}`} key={`${venue[i]}-score`}>

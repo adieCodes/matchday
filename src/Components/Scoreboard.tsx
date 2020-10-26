@@ -1,4 +1,5 @@
 import React from 'react';
+import ScoreboardRow from './ScoreboardRow';
 
 interface Props {
   contestants: Team[];
@@ -20,26 +21,12 @@ const Scoreboard = (props: Props) => {
       <caption className='scoreboard__competition'>{competition}</caption>
       <tbody className='scoreboard__scoreboard'>
         {contestants.map((contestant, i) => (
-          <tr className={`scoreboard__${venue[i]}`} key={`${venue[i]}-score`}>
-            <td className={`scoreboard__badge--${venue[i]}`}>
-              <img
-                className={`scoreboard__${venue[i]}-badge scoreboard__badge`}
-                src={teamBadges[i]}
-                alt={`${contestant.name} Badge`}
-              />
-            </td>
-            <td className={`scoreboard__teams--${venue[i]}`}>
-              {contestants[0].name}
-            </td>
-            {i === 0 && (
-              <td className='scoreboard__time' rowSpan={2}>
-                {time}
-              </td>
-            )}
-            <td className={`scoreboard__score--${venue[i]} scoreboard__score`}>
-              7
-            </td>
-          </tr>
+          <ScoreboardRow
+            team={contestant.name}
+            time={time}
+            badge={teamBadges[i]}
+            venue={venue[i]}
+          />
         ))}
       </tbody>
     </table>

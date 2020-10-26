@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Scoreboard from './Components/Scoreboard';
+import Matchday from './Components/Matchday';
 import Loading from './Components/Loading';
 import './App.css';
 
@@ -35,7 +35,7 @@ function App() {
       {isLoading ? (
         <Loading />
       ) : (
-        <Scoreboard
+        <Matchday
           contestants={contestants}
           competition={competition}
           time={matchTime}

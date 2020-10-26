@@ -47,6 +47,11 @@ body {
   font-size: 18px;
 }
 
+.loading {
+  width: 100%;
+  height: auto;
+}
+
 /* .scoreboard__match {
   display: flex;
   align-items: stretch;

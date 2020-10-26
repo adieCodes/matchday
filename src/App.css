@@ -75,3 +75,7 @@ td.scoreboard__score {
   color: #282c34;
   border-radius: 5px;
 }
+
+.loading {
+  font-size: 5em;
+}

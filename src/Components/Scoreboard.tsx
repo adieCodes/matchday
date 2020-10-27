@@ -33,6 +33,7 @@ const Scoreboard = (props: Props) => {
               badge={teamBadge}
               venue={venue}
               score={teamScore}
+              key={contestant.name}
             />
           );
         })}

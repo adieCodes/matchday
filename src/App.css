@@ -43,6 +43,7 @@
   --yellow: rgb(239, 229, 46);
   --green: rgb(76, 175, 80);
   --blue: rgb(30, 42, 58);
+  --grey: rgb(182, 203, 216);
 }
 
 body {
@@ -78,12 +79,17 @@ body {
 
 .scoreboard__competition {
   text-align: left;
-  font-size: 1.25em;
+  font-size: 0.8em;
   line-height: 2em;
+  color: var(--grey);
 }
 
 .scoreboard__badge {
   height: 1.75em;
+}
+
+.scoreboard__teams {
+  font-weight: 700;
 }
 
 td.scoreboard__score {

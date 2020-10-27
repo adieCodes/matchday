@@ -20,7 +20,9 @@ const ScoreboardRow = (props: Props) => {
           alt={`${team} Badge`}
         />
       </td>
-      <td className={`scoreboard__teams--${venue}`}>{team}</td>
+      <td className={`scoreboard__teams--${venue} scoreboard__teams`}>
+        {team}
+      </td>
       {/* Only need to add this td once */}
       {venue === 'home' && (
         <td className='scoreboard__time' rowSpan={2}>

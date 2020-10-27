@@ -1,6 +1,7 @@
 import React from 'react';
 import Scoreboard from './Scoreboard';
 import Nav from './Nav';
+import StatsFilters from './StatsFilters';
 import Stats from './Stats';
 
 interface Props {
@@ -22,6 +23,7 @@ const Matchday = (props: Props) => {
         score={score}
       />
       <Nav contestants={contestants} />
+      <StatsFilters />
       <Stats lineupStats={lineupStats} />
     </>
   );

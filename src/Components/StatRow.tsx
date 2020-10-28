@@ -19,9 +19,9 @@ const StatRow = (props: Props) => {
   return (
     <>
       <div className='stat__row'>
-        <span>{homeValue}</span>
+        <span>{statName === 'possession' ? homeValue + '%' : homeValue}</span>
         <span>{statName}</span>
-        <span>{awayValue}</span>
+        <span>{statName === 'possession' ? awayValue + '%' : awayValue}</span>
       </div>
       <div className='stat__row'>
         <ProgressBar bgColour='#EFE52E' completed={`${homePerc}`} />

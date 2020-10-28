@@ -4,7 +4,7 @@ import Button from './Button';
 interface Props {
   buttons: IMatchButton[];
   activeButton: string;
-  setActiveButton: (button: string) => void;
+  setActiveButton: (button: IMatchButton) => void;
 }
 
 const StatsFilters = (props: Props) => {

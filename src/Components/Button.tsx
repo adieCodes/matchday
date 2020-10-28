@@ -3,7 +3,7 @@ import React from 'react';
 interface Props {
   buttonConfig: IMatchButton;
   activeButton: string;
-  setActiveButton: (button: string) => void;
+  setActiveButton: (button: IMatchButton) => void;
 }
 
 const Button = (props: Props) => {
@@ -12,7 +12,7 @@ const Button = (props: Props) => {
   return (
     <button
       className={activeButton === buttonConfig.name ? 'active' : ''}
-      onClick={() => setActiveButton(buttonConfig.name)}
+      onClick={() => setActiveButton(buttonConfig)}
     >
       {buttonConfig.name}
     </button>

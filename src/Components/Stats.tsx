@@ -3,10 +3,11 @@ import StatRow from './StatRow';
 
 type Props = {
   lineupStats: ILineUps;
+  activeStat: string;
 };
 
 const Stats = (props: Props) => {
-  const { lineupStats } = props;
+  const { lineupStats, activeStat } = props;
   const homeStats = lineupStats.home ? lineupStats.home.stats : null;
   const awayStats = lineupStats.away ? lineupStats.away.stats : null;
   // TODO: Figure out how to get a lookup object without TS complaining
@@ -47,6 +48,7 @@ const Stats = (props: Props) => {
               home={currentHomeStat[0]}
               away={currentAwayStat[0]}
               statName={statTypeMap[key]}
+              activeStat={activeStat}
               key={key}
             />
           );

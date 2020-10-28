@@ -5,11 +5,11 @@ const matchButtons: IMatchButton[] = [
   },
   {
     name: '1st Half',
-    dataKey: 'value',
+    dataKey: 'fh',
   },
   {
     name: '2nd Half',
-    dataKey: 'value',
+    dataKey: 'sh',
   },
 ];
 

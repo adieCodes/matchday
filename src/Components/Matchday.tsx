@@ -15,10 +15,12 @@ interface Props {
 
 const Matchday = (props: Props) => {
   const [activeButton, setActiveButton] = useState(matchButtons[0].name);
+  const [activeStat, setActiveStat] = useState(matchButtons[0].dataKey);
   const { contestants, competition, time, score, lineupStats } = props;
 
-  const updateActiveButton = (buttonName: string) => {
-    setActiveButton(buttonName);
+  const updateActiveButton = (button: IMatchButton) => {
+    setActiveButton(button.name);
+    setActiveStat(button.dataKey);
   };
 
   return (
@@ -35,7 +37,7 @@ const Matchday = (props: Props) => {
         activeButton={activeButton}
         setActiveButton={updateActiveButton}
       />
-      <Stats lineupStats={lineupStats} />
+      <Stats lineupStats={lineupStats} activeStat={activeStat} />
     </div>
   );
 };

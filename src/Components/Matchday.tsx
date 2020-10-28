@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Scoreboard from './Scoreboard';
 import Nav from './Nav';
 import StatsFilters from './StatsFilters';
 import Stats from './Stats';
+import matchButtons from '../config/matchButtons';
 
 interface Props {
   contestants: Team[];
@@ -13,9 +14,15 @@ interface Props {
 }
 
 const Matchday = (props: Props) => {
+  const [activeButton, setActiveButton] = useState(matchButtons[0].name);
   const { contestants, competition, time, score, lineupStats } = props;
+
+  const updateActiveButton = (buttonName: string) => {
+    setActiveButton(buttonName);
+  };
+
   return (
-    <>
+    <div className='matchday'>
       <Scoreboard
         contestants={contestants}
         competition={competition}
@@ -23,9 +30,13 @@ const Matchday = (props: Props) => {
         score={score}
       />
       <Nav contestants={contestants} />
-      <StatsFilters />
+      <StatsFilters
+        buttons={matchButtons}
+        activeButton={activeButton}
+        setActiveButton={updateActiveButton}
+      />
       <Stats lineupStats={lineupStats} />
-    </>
+    </div>
   );
 };
 

@@ -164,3 +164,8 @@ nav li.active a {
   justify-content: space-between;
   margin: 1em;
 }
+
+button.active {
+  background-color: var(--yellow);
+  color: var(--dark-blue);
+}
